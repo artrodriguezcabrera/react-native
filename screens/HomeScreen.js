@@ -9,7 +9,6 @@ import Course from '../components/Course';
 import Menu from '../components/Menu';
 import { connect } from 'react-redux';
 import Avatar from '../components/Avatar';
-import ApolloClient from 'apollo-boost';
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 
@@ -40,6 +39,7 @@ const CardsQuery = gql`
         width
         height
       }
+      content
     }
   }
 }
@@ -168,6 +168,7 @@ class HomeScreen extends React.Component {
                               caption={card.caption}
                               logo={card.logo}
                               subtitle={card.subtitle}
+                              content={card.content}
                             />
                           </TouchableOpacity>
                         ))}
